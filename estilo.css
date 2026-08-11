@@ -1,0 +1,40 @@
+/* Reseta margens e preenchimentos padrões */
+* {
+  margin: 1;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Configuração do Cabeçalho */
+.header-principal {
+  width: 100%;
+  height: 70vh; /* Define a altura como 70% da tela */
+  background-image: url('https://picsum.photos/1920/1080'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover; /* Faz a imagem cobrir todo o espaço */
+  background-position: center; /* Centraliza a imagem de fundo */
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Camada escura sobre a imagem para dar contraste ao texto */
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Preto com 50% de transparência */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+}
+
+/* Estilização do Título */
+.titulo-site {
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra para reforçar a leitura */
+  text-align: center;
+  padding: 0 20px;
+}
