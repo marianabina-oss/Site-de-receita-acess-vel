@@ -9,7 +9,7 @@
 .header-principal {
   width: 100%;
   height: 70vh; /* Define a altura como 70% da tela */
-  background-image: url('https://www.cpt.com.br/artigos/quais-sao-as-principais-comidas-tipicas-da-culinaria-mineira'); /* Substitua pelo caminho da sua imagem */
+  background-image: url('https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia27698/quais-sao-as-principais-comidas-tipicas-da-culinaria-mineira-cpt11.jpg'); /* Substitua pelo caminho da sua imagem */
   background-size: cover; /* Faz a imagem cobrir todo o espaço */
   background-position: center; /* Centraliza a imagem de fundo */
   background-repeat: no-repeat;
