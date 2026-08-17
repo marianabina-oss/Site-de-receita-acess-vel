@@ -42,10 +42,12 @@ body{
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra para reforçar a leitura */
   text-align: center;
   padding: 0 20px;
+  
 }
 
 .receitas{
-  font-size: 80px;
+  font-size: 60px;
+  margin-left: 100px;
 }
 
 .receitas-sub{
