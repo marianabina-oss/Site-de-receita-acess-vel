@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: #FFDB91;
+}
+
 /* Configuração do Cabeçalho */
 .header-principal {
   width: 100%;
