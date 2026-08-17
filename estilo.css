@@ -52,3 +52,12 @@ body{
   font-size: 30px;
   color: #A0947A;
 }
+
+.caixa-texto {
+  background-color: #f9f9f9; /* Cor de fundo da caixa */
+  border: 1px solid #dddddd;   /* Borda fina e cinza */
+  padding: 20px;             /* Espaço entre o texto e a borda */
+  border-radius: 8px;        /* Arredonda os cantos da caixa */
+  max-width: 400px;          /* Define a largura máxima da caixa */
+  margin: 20px auto;         /* Centraliza a caixa na tela */
+}
