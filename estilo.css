@@ -51,8 +51,9 @@ body{
 }
 
 .receitas-sub{
-  font-size: 30px;
+  font-size: 25px;
   color: #A0947A;
+  margin-left: 70px;
 }
 
 .caixa-texto {
