@@ -67,4 +67,9 @@ body{
 
 .caixa-comida{
   background-image: url(https://djapa.com.br/blog/comida-japonesa/comida-japonesa-para-iniciantes-o-que-pedir/);
+  border: 1px solid #dddddd;   /* Borda fina e cinza */
+  padding: 20px;             /* Espaço entre o texto e a borda */
+  border-radius: 8px;        /* Arredonda os cantos da caixa */
+  max-width: 480px;          /* Define a largura máxima da caixa */
+  margin: 20px auto;         /* Centraliza a caixa na tela */
 }
