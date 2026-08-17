@@ -64,3 +64,7 @@ body{
   max-width: 480px;          /* Define a largura máxima da caixa */
   margin: 20px auto;         /* Centraliza a caixa na tela */
 }
+
+.caixa-comida{
+  background-image: url(https://djapa.com.br/blog/comida-japonesa/comida-japonesa-para-iniciantes-o-que-pedir/);
+}
