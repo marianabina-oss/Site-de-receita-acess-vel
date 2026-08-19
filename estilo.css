@@ -74,15 +74,34 @@ body{
   margin: 20px auto;         /* Centraliza a caixa na tela */
 }
 
-/* Botão de acionamento */
 .btn-atalhos {
-  padding: 8px 16px;
-  background-color: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999; /* Garante que o botão fique sobreposto aos outros elementos */
+  
+  /* Cor cappuccino (marrom claro) */
+  background-color: #c4a482; 
+  color: #2b1a0e; /* Texto em tom marrom escuro para manter o contraste e acessibilidade */
+  
+  border: 1px solid #b08d6c;
+  padding: 10px 18px;
+  border-radius: 8px;
   font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Efeito ao passar o mouse */
+.btn-atalhos:hover {
+  background-color: #b08d6c;
+}
+
+/* Efeito de clique */
+.btn-atalhos:active {
+  transform: scale(0.98);
 }
 
 /* Fundo escuro atrás do painel */
