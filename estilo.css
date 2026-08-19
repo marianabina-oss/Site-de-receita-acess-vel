@@ -171,3 +171,53 @@ kbd {
   padding: 10px 0;
   border-bottom: 1px solid #f1f5f9;
 }
+
+.container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .shortcut {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 120px;
+      background-color: #ffffff;
+      border: 2px solid #cccccc;
+      border-radius: 12px;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    /* Estilo de foco visual ao navegar com as setas */
+    .shortcut:focus {
+      border-color: #0066cc;
+      box-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
+      transform: scale(1.05);
+    }
+
+    .shortcut svg {
+      width: 48px;
+      height: 48px;
+      fill: #333333;
+    }
+
+    .shortcut span {
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    #content-area {
+      margin-top: 40px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
