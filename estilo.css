@@ -73,3 +73,82 @@ body{
   max-width: 480px;          /* Define a largura máxima da caixa */
   margin: 20px auto;         /* Centraliza a caixa na tela */
 }
+
+/* Botão de acionamento */
+.btn-atalhos {
+  padding: 8px 16px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Fundo escuro atrás do painel */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Esconde o painel quando possui o atributo hidden */
+.modal-overlay[hidden] {
+  display: none;
+}
+
+/* Caixa de conteúdo */
+.modal-conteudo {
+  background-color: #ffffff;
+  color: #1e293b;
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 380px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.btn-fechar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #64748b;
+}
+
+/* Estilo visual para teclas */
+kbd {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.lista-atalhos {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.lista-atalhos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
