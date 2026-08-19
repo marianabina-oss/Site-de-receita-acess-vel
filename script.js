@@ -2,7 +2,6 @@ const modal = document.getElementById('modal-atalhos');
 const btnAtalhos = document.getElementById('btn-atalhos');
 const btnFechar = document.getElementById('btn-fechar');
 
- alert("Teste")
 function alternarPainel() {
   if (modal.hasAttribute('hidden')) {
     modal.removeAttribute('hidden');
