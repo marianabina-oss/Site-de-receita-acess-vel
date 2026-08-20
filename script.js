@@ -30,13 +30,12 @@ document.addEventListener('keydown', (event) => {
 const visaoGrid = document.getElementById('visao-grid');
 const visaoReceita = document.getElementById('visao-receita');
 const btnVoltar = document.getElementById('btn-voltar');
-const shortcuts = document.querySelectorAll('.shortcut');
 
 function abrirReceita() {
   visaoGrid.setAttribute('hidden', '');
   visaoReceita.removeAttribute('hidden');
   window.scrollTo(0, 0);
-  btnVoltar.focus(); // Foca no botão voltar para facilitar a navegação por teclado
+  btnVoltar.focus();
 }
 
 function fecharReceita() {
@@ -44,19 +43,25 @@ function fecharReceita() {
   visaoGrid.removeAttribute('hidden');
 }
 
-// Configura evento de Clique e tecla Enter para cada card
-shortcuts.forEach((card) => {
-  card.addEventListener('click', abrirReceita);
+// Clique com o mouse em qualquer lugar do card
+document.addEventListener('click', (event) => {
+  if (event.target.closest('.shortcut')) {
+    abrirReceita();
+  }
+});
 
-  card.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
+// Tecla Enter no card focado
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    const cardAtivo = document.activeElement.closest('.shortcut');
+    if (cardAtivo) {
       event.preventDefault();
       abrirReceita();
     }
-  });
+  }
 });
 
-// Voltar com o botão ou tecla ESC
+// Botão Voltar com clique ou tecla ESC
 btnVoltar.addEventListener('click', fecharReceita);
 
 document.addEventListener('keydown', (event) => {
