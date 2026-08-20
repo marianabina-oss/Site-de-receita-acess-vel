@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // --- GERENCIAMENTO DO MODAL DE ATALHOS ---
+  // --- MODAL DE ATALHOS ---
   const modal = document.getElementById('modal-atalhos');
   const btnAtalhos = document.getElementById('btn-atalhos');
   const btnFechar = document.getElementById('btn-fechar');
@@ -13,26 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (btnAtalhos) btnAtalhos.addEventListener('click', alternarPainel);
-  if (btnFechar) btnFechar.addEventListener('click', alternarPainel);
+  btnAtalhos?.addEventListener('click', alternarPainel);
+  btnFechar?.addEventListener('click', alternarPainel);
 
-  if (modal) {
-    modal.addEventListener('click', (event) => {
-      if (event.target === modal) alternarPainel();
-    });
-  }
-
-  document.addEventListener('keydown', (event) => {
-    const tagAtiva = document.activeElement ? document.activeElement.tagName : '';
-    if (tagAtiva === 'INPUT' || tagAtiva === 'TEXTAREA') return;
-
-    if (event.key === '?' || event.key === '/') {
-      event.preventDefault();
-      alternarPainel();
-    }
+  modal?.addEventListener('click', (event) => {
+    if (event.target === modal) alternarPainel();
   });
 
-  // --- NAVEGAÇÃO DE RECEITAS (GRID -> RECEITA) ---
+  // --- NAVEGAÇÃO DE RECEITAS ---
   const visaoGrid = document.getElementById('visao-grid');
   const visaoReceita = document.getElementById('visao-receita');
   const btnVoltar = document.getElementById('btn-voltar');
@@ -41,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (visaoGrid) visaoGrid.setAttribute('hidden', '');
     if (visaoReceita) visaoReceita.removeAttribute('hidden');
     window.scrollTo(0, 0);
-    if (btnVoltar) btnVoltar.focus();
+    btnVoltar?.focus();
   }
 
   function fecharReceita() {
@@ -49,15 +37,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (visaoGrid) visaoGrid.removeAttribute('hidden');
   }
 
-  // Clique em qualquer card de receita
-  document.addEventListener('click', (event) => {
-    if (event.target.closest('.shortcut')) {
-      abrirReceita();
-    }
-  });
-
-  // Tecla Enter no card selecionado
+  // --- ESCUTA GLOBAL DE TECLAS ---
   document.addEventListener('keydown', (event) => {
+    const tagAtiva = document.activeElement ? document.activeElement.tagName : '';
+    if (tagAtiva === 'INPUT' || tagAtiva === 'TEXTAREA') return;
+
+    // Abrir/fechar modal (? ou /)
+    if (event.key === '?' || event.key === '/') {
+      event.preventDefault();
+      alternarPainel();
+      return;
+    }
+
+    // Rolar para baixo (Espaço) e para cima (Shift + Espaço)
+    if (event.key === ' ' || event.code === 'Space') {
+      // Impede o salto desordenado e faz rolagem suave
+      if (tagAtiva !== 'BUTTON' && !document.activeElement.classList.contains('shortcut')) {
+        event.preventDefault();
+        const distancia = event.shiftKey ? -350 : 350;
+        window.scrollBy({ top: distancia, behavior: 'smooth' });
+      }
+    }
+
+    // Entrar na receita (Enter)
     if (event.key === 'Enter') {
       const cardAtivo = document.activeElement ? document.activeElement.closest('.shortcut') : null;
       if (cardAtivo) {
@@ -65,14 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
         abrirReceita();
       }
     }
-  });
 
-  // Ações de voltar (Botão ou Tecla ESC)
-  if (btnVoltar) btnVoltar.addEventListener('click', fecharReceita);
-
-  document.addEventListener('keydown', (event) => {
+    // Voltar para o início (ESC)
     if (event.key === 'Escape' && visaoReceita && !visaoReceita.hasAttribute('hidden')) {
       fecharReceita();
     }
   });
+
+  // Clique em qualquer card
+  document.addEventListener('click', (event) => {
+    if (event.target.closest('.shortcut')) {
+      abrirReceita();
+    }
+  });
+
+  // Botão voltar
+  btnVoltar?.addEventListener('click', fecharReceita);
 });
