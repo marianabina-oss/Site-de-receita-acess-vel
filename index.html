@@ -191,5 +191,59 @@
     }
     </script>
 
+<!-- VISÃO 1: LISTA DE RECEITAS -->
+<div id="visao-grid">
+  <!-- Mantenha seu <div class="container" id="grid"> aqui dentro -->
+</div>
+
+<!-- VISÃO 2: DETALHES DA RECEITA (Oculto por padrão) -->
+<main id="visao-receita" class="receita-container" hidden>
+  
+  <button id="btn-voltar" class="btn-voltar">
+    ← Voltar às receitas <kbd>ESC</kbd>
+  </button>
+
+  <span class="badge-tag" id="rec-categoria">Prato Principal</span>
+  <h1 id="rec-titulo">Lasanha à Bolonhesa</h1>
+  <p class="rec-descricao">Macia, rápida e sem cortes difíceis. Perfeita para servir com facilidade.</p>
+
+  <div class="rec-meta">
+    <span>⏱️ 45 min</span>
+    <span>👥 4 porções</span>
+    <span class="badge-diff">Fácil</span>
+  </div>
+
+  <div class="rec-imagem">
+    <img id="rec-img" src="https://www.gastronomia.com.br/wp-content/uploads/2023/12/comida-com-l-lasanha-lagosta-linguica-e-muito-mais.jpg" alt="Lasanha">
+  </div>
+
+  <!-- Bloco de Ingredientes -->
+  <section class="card-secao">
+    <h2>Ingredientes</h2>
+    <ul class="lista-ingredientes">
+      <li><span>1</span> 500g de massa para lasanha pré-cozida</li>
+      <li><span>2</span> 500g de carne moída bem cozida</li>
+      <li><span>3</span> 2 sachês de molho de tomate pronto</li>
+      <li><span>4</span> 300g de queijo mussarela fatiado</li>
+    </ul>
+  </section>
+
+  <!-- Bloco do Modo de Preparo -->
+  <section class="card-secao">
+    <h2>Modo de Preparo</h2>
+    <div class="passo-box">
+      <div class="passo-numero">1</div>
+      <div class="passo-texto">
+        <p>Em uma travessa funda, monte camadas alternando o molho, a massa e o queijo.</p>
+        
+        <div class="dica-acessibilidade">
+          💡 <strong>Dica de acessibilidade:</strong> Apoie a travessa sobre um pano úmido ou tapete antiderrapante para não deslizar na bancada.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
 </body>
 </html>
