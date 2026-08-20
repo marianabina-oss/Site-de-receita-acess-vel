@@ -258,7 +258,31 @@
   <!-- Conteúdo da receita aqui -->
 </main>
 
+<!-- Bloco do Modo de Preparo -->
+<section class="card-secao">
+  <h2>Modo de Preparo</h2>
+  
+  <!-- Barra de Progresso -->
+  <div class="progresso-container">
+    <div id="passo-progresso" class="barra-progresso"></div>
+  </div>
 
+  <div class="passo-box">
+    <div class="passo-numero" id="passo-numero">1</div>
+    <div class="passo-conteudo">
+      <p id="passo-texto">Em uma travessa funda, monte camadas alternando o molho, a massa e o queijo.</p>
+      <div class="dica-acessibilidade" id="passo-dica">
+        💡 <strong>Dica de acessibilidade:</strong> Apoie a travessa sobre um pano úmido para não deslizar.
+      </div>
+    </div>
+  </div>
+
+  <!-- Botões de Navegação -->
+  <div class="passo-controles">
+    <button id="btn-passo-anterior" class="btn-passo" disabled>← Anterior <kbd>P</kbd></button>
+    <button id="btn-passo-proximo" class="btn-passo btn-destaque">Próximo → <kbd>N</kbd></button>
+  </div>
+</section>
 
 </body>
 </html>

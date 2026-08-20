@@ -88,3 +88,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Botão voltar
   btnVoltar?.addEventListener('click', fecharReceita);
 });
+
+// Navegação entre os passos (N/P ou Setas Esquerda/Direita)
+    if (visaoReceita && !visaoReceita.hasAttribute('hidden')) {
+      if (event.key === 'n' || event.key === 'N' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        proximoPasso();
+        return;
+      }
+      if (event.key === 'p' || event.key === 'P' || event.key === 'ArrowLeft') {
+        event.preventDefault();
+        passoAnterior();
+        return;
+      }
+    }
