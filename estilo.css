@@ -177,46 +177,47 @@ kbd {
       gap: 20px;
     }
 
-    .shortcut {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 120px;
-      height: 120px;
-      background-color: #ffffff;
-      border: 2px solid #cccccc;
-      border-radius: 12px;
-      cursor: pointer;
-      outline: none;
-      transition: all 0.2s ease;
-    }
-
-   .shortcut img {
-  width: 120px;        /* Defina o tamanho ideal aqui (ex: 80px, 120px, 150px) */
-  height: 120px;       /* Mantém altura igual para criar um quadrado */
-  object-fit: cover;   /* Corta as bordas excedentes sem distorcer a comida */
-  border-radius: 8px;  /* Canto levemente arredondado */
+ .shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 125px; /* Aumentado levemente para o texto caber sem aperto */
+  background-color: #ffffff;
+  border: 2px solid #cccccc;
+  border-radius: 12px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  overflow: hidden; /* CORTA a imagem no raio exato do card */
 }
-    /* Estilo de foco visual ao navegar com as setas */
-    .shortcut:focus {
-      border-color: #0066cc;
-      box-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
-      transform: scale(1.05);
-    }
 
-    .shortcut svg {
-      width: 48px;
-      height: 48px;
-      fill: #333333;
-    }
+.shortcut img {
+  width: 100%; /* Ocupa de borda a borda */
+  height: 85px; /* Reservado para a foto */
+  object-fit: cover;
+  display: block;
+}
 
-    .shortcut span {
-      margin-top: 8px;
-      font-size: 14px;
-      font-weight: bold;
-      color: #333333;
-    }
+/* Estilo de foco visual ao navegar com as setas */
+.shortcut:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
+  transform: scale(1.05);
+}
+
+.shortcut svg {
+  width: 48px;
+  height: 48px;
+  fill: #333333;
+}
+
+.shortcut span {
+  margin: auto 0; /* Centraliza o texto no espaço que sobrou embaixo */
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+}
 
     #content-area {
       margin-top: 40px;
