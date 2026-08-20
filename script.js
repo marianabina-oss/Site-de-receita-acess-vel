@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   // --- MODAL DE ATALHOS ---
   const modal = document.getElementById('modal-atalhos');
   const btnAtalhos = document.getElementById('btn-atalhos');
@@ -49,16 +50,26 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Rolar para baixo (Seta para Baixo)
+    // Trava Seta para Baixo exclusivamente para rolagem
     if (event.key === 'ArrowDown') {
       event.preventDefault();
+      event.stopPropagation();
+      if (document.activeElement && document.activeElement.tagName !== 'BODY') {
+        document.activeElement.blur();
+      }
       window.scrollBy({ top: 350, behavior: 'smooth' });
+      return;
     }
 
-    // Rolar para cima (Seta para Cima)
+    // Trava Seta para Cima exclusivamente para rolagem
     if (event.key === 'ArrowUp') {
       event.preventDefault();
+      event.stopPropagation();
+      if (document.activeElement && document.activeElement.tagName !== 'BODY') {
+        document.activeElement.blur();
+      }
       window.scrollBy({ top: -350, behavior: 'smooth' });
+      return;
     }
 
     // Entrar na receita (Enter)
@@ -74,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.key === 'Escape' && visaoReceita && !visaoReceita.hasAttribute('hidden')) {
       fecharReceita();
     }
-  });
+  }, true);
 
   // Clique em qualquer card
   document.addEventListener('click', (event) => {
