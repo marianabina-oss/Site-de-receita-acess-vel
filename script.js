@@ -49,14 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Rolar para baixo (Espaço) e para cima (Shift + Espaço)
-    if (event.key === ' ' || event.code === 'Space') {
-      // Impede o salto desordenado e faz rolagem suave
-      if (tagAtiva !== 'BUTTON' && !document.activeElement.classList.contains('shortcut')) {
-        event.preventDefault();
-        const distancia = event.shiftKey ? -350 : 350;
-        window.scrollBy({ top: distancia, behavior: 'smooth' });
-      }
+    // Rolar para baixo (Seta para Baixo)
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      window.scrollBy({ top: 350, behavior: 'smooth' });
+    }
+
+    // Rolar para cima (Seta para Cima)
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      window.scrollBy({ top: -350, behavior: 'smooth' });
     }
 
     // Entrar na receita (Enter)
@@ -68,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Voltar para o início (ESC)
+    // Voltar para a lista (ESC)
     if (event.key === 'Escape' && visaoReceita && !visaoReceita.hasAttribute('hidden')) {
       fecharReceita();
     }
