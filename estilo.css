@@ -192,6 +192,12 @@ kbd {
       transition: all 0.2s ease;
     }
 
+   .shortcut img {
+  width: 120px;        /* Defina o tamanho ideal aqui (ex: 80px, 120px, 150px) */
+  height: 120px;       /* Mantém altura igual para criar um quadrado */
+  object-fit: cover;   /* Corta as bordas excedentes sem distorcer a comida */
+  border-radius: 8px;  /* Canto levemente arredondado */
+}
     /* Estilo de foco visual ao navegar com as setas */
     .shortcut:focus {
       border-color: #0066cc;
