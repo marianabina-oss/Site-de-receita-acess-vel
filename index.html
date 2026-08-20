@@ -8,281 +8,181 @@
 </head>
 <body>
 
+  <!-- Cabeçalho Principal -->
   <header class="header-principal">
     <div class="overlay">
       <h1 class="titulo-site">AcessiFood</h1>
     </div>
   </header>
 
-  <h1 class="receitas">Receitas acessíveis para todos </h1>
-  <h2 class="receitas-sub">Cada receita inclui dicas especiais para quem tem tremor involuntário, adaptadas para facilitar cada etapa da cozinha.</h2>
+  <main class="conteudo-principal">
+    <h1 class="receitas">Receitas acessíveis para todos</h1>
+    <h2 class="receitas-sub">Cada receita inclui dicas especiais para quem tem tremor involuntário, adaptadas para facilitar cada etapa da cozinha.</h2>
 
-  <div class="caixa-texto">
-    <p>⌨️Use as setas do teclado para navegar. — Tecla ? abre os atalhos.</p>
-  </div>
-
-<!-- Botão visível na página -->
-<button id="btn-atalhos" class="btn-atalhos">
-  ⌨️ Atalhos <kbd>?</kbd>
-</button>
-
-<!-- Modal de Atalhos (oculto por padrão) -->
-<div id="modal-atalhos" class="modal-overlay" hidden>
-  <div class="modal-conteudo">
-    <button id="btn-fechar" class="btn-fechar">&times;</button>
-    <h2>Atalhos do Teclado</h2>
-    
-    <ul class="lista-atalhos">
-      <li><span>Abrir / Fechar painel</span> <kbd>?</kbd> <kbd>ou</kbd><kbd>/</kbd></li>
-      <li><span>Rolar para baixo</span> <kbd>Espaço</kbd></li>
-      <li><span>Rolar para cima</span> <kbd>Shift</kbd><kbd>+</kbd><kbd>Espaço</kbd></li>
-      <li><span>Próxima receita</span> <kbd>→</kbd></li>
-      <li><span>Receita anterior</span> <kbd>←</kbd></li>
-      <li><span>Selecionar receita</span> <kbd>Enter</kbd></li>
-    </ul>
-  </div>
-</div>
-
-<script src="script.js">
-</script>
-
-   
-  </style>
-</head>
-<body>
-
-<div class="container" id="grid">
-
-  <!-- Item 1: Lasanha -->
-  <div class="shortcut" tabindex="0" data-target="pratos">
-    <div class="img-container">
-      <img src="https://www.gastronomia.com.br/wp-content/uploads/2023/12/comida-com-l-lasanha-lagosta-linguica-e-muito-mais.jpg" alt="Lasanha">
-      <span class="badge-tag">Prato Principal</span>
-      <span class="badge-num">1</span>
+    <div class="caixa-texto">
+      <p>⌨️ Use as setas do teclado para navegar. — Tecla <kbd>?</kbd> abre os atalhos.</p>
     </div>
-    <div class="shortcut-body">
-      <h3>Lasanha à Bolonhesa</h3>
-      <p>Massa macia e fácil de cortar, ideal para quem precisa de firmeza no manuseio.</p>
-      <div class="shortcut-meta">
+
+    <!-- Botão de Atalhos -->
+    <button id="btn-atalhos" class="btn-atalhos">
+      ⌨️ Atalhos <kbd>?</kbd>
+    </button>
+
+    <!-- Modal de Atalhos -->
+    <div id="modal-atalhos" class="modal-overlay" hidden>
+      <div class="modal-conteudo">
+        <button id="btn-fechar" class="btn-fechar">&times;</button>
+        <h2>Atalhos do Teclado</h2>
+        
+        <ul class="lista-atalhos">
+          <li><span>Abrir / Fechar painel</span> <kbd>?</kbd> <kbd>ou</kbd> <kbd>/</kbd></li>
+          <li><span>Rolar para baixo</span> <kbd>↓</kbd></li>
+          <li><span>Rolar para cima</span> <kbd>↑</kbd></li>
+          <li><span>Próximo passo</span> <kbd>→</kbd> <kbd>ou</kbd> <kbd>N</kbd></li>
+          <li><span>Passo anterior</span> <kbd>←</kbd> <kbd>ou</kbd> <kbd>P</kbd></li>
+          <li><span>Abrir receita</span> <kbd>Enter</kbd></li>
+          <li><span>Voltar às receitas</span> <kbd>ESC</kbd></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- VISÃO 1: LISTA DE RECEITAS (GRID) -->
+    <div id="visao-grid">
+      <div class="container" id="grid">
+
+        <!-- Card 1: Lasanha -->
+        <div class="shortcut" tabindex="0" data-target="lasanha">
+          <div class="img-container">
+            <img src="https://www.gastronomia.com.br/wp-content/uploads/2023/12/comida-com-l-lasanha-lagosta-linguica-e-muito-mais.jpg" alt="Lasanha à Bolonhesa">
+            <span class="badge-tag">Prato Principal</span>
+            <span class="badge-num">1</span>
+          </div>
+          <div class="shortcut-body">
+            <h3>Lasanha à Bolonhesa</h3>
+            <p>Massa macia e fácil de cortar, ideal para quem precisa de firmeza no manuseio.</p>
+            <div class="shortcut-meta">
+              <span>⏱️ 45 min</span>
+              <span>👥 4 porções</span>
+              <span class="badge-diff">Fácil</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Batata Rústica -->
+        <div class="shortcut" tabindex="0" data-target="batata">
+          <div class="img-container">
+            <img src="https://i.pinimg.com/originals/f1/1c/af/f11cafce61ca93b19cb08ed21d16b7c6.jpg" alt="Batata Rústica">
+            <span class="badge-tag">Acompanhamento</span>
+            <span class="badge-num">2</span>
+          </div>
+          <div class="shortcut-body">
+            <h3>Batata Rústica</h3>
+            <p>Corte prático em pedaços grandes, assada para evitar respingos de óleo.</p>
+            <div class="shortcut-meta">
+              <span>⏱️ 30 min</span>
+              <span>👥 3 porções</span>
+              <span class="badge-diff">Fácil</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Pão de Queijo -->
+        <div class="shortcut" tabindex="0" data-target="pao-de-queijo">
+          <div class="img-container">
+            <img src="https://www.sabornamesa.com.br/media/k2/items/cache/10a451d868feb5fd854c1535dddc148e_XL.jpg" alt="Pão de Queijo">
+            <span class="badge-tag">Lanche</span>
+            <span class="badge-num">3</span>
+          </div>
+          <div class="shortcut-body">
+            <h3>Pão de Queijo</h3>
+            <p>Porções individuais perfeitas para pegar com as mãos sem derramar.</p>
+            <div class="shortcut-meta">
+              <span>⏱️ 25 min</span>
+              <span>👥 12 un</span>
+              <span class="badge-diff">Fácil</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Kibe Assado -->
+        <div class="shortcut" tabindex="0" data-target="kibe">
+          <div class="img-container">
+            <img src="https://blog-parceiros.ifood.com.br/wp-content/uploads/2024/10/quibe.jpg" alt="Kibe Assado">
+            <span class="badge-tag">Salgado</span>
+            <span class="badge-num">4</span>
+          </div>
+          <div class="shortcut-body">
+            <h3>Kibe Assado</h3>
+            <p>Preparo simples na travessa, sem necessidade de fritura individual.</p>
+            <div class="shortcut-meta">
+              <span>⏱️ 40 min</span>
+              <span>👥 6 porções</span>
+              <span class="badge-diff">Fácil</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VISÃO 2: DETALHES DA RECEITA -->
+    <main id="visao-receita" class="receita-container" hidden>
+      <button id="btn-voltar" class="btn-voltar">
+        ← Voltar às receitas <kbd>ESC</kbd>
+      </button>
+
+      <span class="badge-tag" id="rec-categoria">Prato Principal</span>
+      <h1 id="rec-titulo">Lasanha à Bolonhesa</h1>
+      <p class="rec-descricao">Macia, rápida e sem cortes difíceis. Perfeita para servir com facilidade.</p>
+
+      <div class="rec-meta">
         <span>⏱️ 45 min</span>
         <span>👥 4 porções</span>
         <span class="badge-diff">Fácil</span>
       </div>
-    </div>
-  </div>
 
-  <!-- Item 2: Batata Frita -->
-  <div class="shortcut" tabindex="0" data-target="massas">
-    <div class="img-container">
-      <img src="https://i.pinimg.com/originals/f1/1c/af/f11cafce61ca93b19cb08ed21d16b7c6.jpg" alt="Batata Frita">
-      <span class="badge-tag">Acompanhamento</span>
-      <span class="badge-num">2</span>
-    </div>
-    <div class="shortcut-body">
-      <h3>Batata Rústica</h3>
-      <p>Corte prático em pedaços grandes, assada para evitar respingos de óleo.</p>
-      <div class="shortcut-meta">
-        <span>⏱️ 30 min</span>
-        <span>👥 3 porções</span>
-        <span class="badge-diff">Fácil</span>
+      <div class="rec-imagem">
+        <img id="rec-img" src="https://www.gastronomia.com.br/wp-content/uploads/2023/12/comida-com-l-lasanha-lagosta-linguica-e-muito-mais.jpg" alt="Lasanha">
       </div>
-    </div>
-  </div>
 
-  <!-- Item 3: Pão de Queijo -->
-  <div class="shortcut" tabindex="0" data-target="sobremesas">
-    <div class="img-container">
-      <img src="https://www.sabornamesa.com.br/media/k2/items/cache/10a451d868feb5fd854c1535dddc148e_XL.jpg" alt="Pão de Queijo">
-      <span class="badge-tag">Lanche</span>
-      <span class="badge-num">3</span>
-    </div>
-    <div class="shortcut-body">
-      <h3>Pão de Queijo</h3>
-      <p>Porções individuais perfeitas para pegar com as mãos sem derramar.</p>
-      <div class="shortcut-meta">
-        <span>⏱️ 25 min</span>
-        <span>👥 12 un</span>
-        <span class="badge-diff">Fácil</span>
-      </div>
-    </div>
-  </div>
+      <!-- Ingredientes -->
+      <section class="card-secao">
+        <h2>Ingredientes</h2>
+        <ul class="lista-ingredientes">
+          <li><span>1</span> 500g de massa para lasanha pré-cozida</li>
+          <li><span>2</span> 500g de carne moída bem cozida</li>
+          <li><span>3</span> 2 sachês de molho de tomate pronto</li>
+          <li><span>4</span> 300g de queijo mussarela fatiado</li>
+        </ul>
+      </section>
 
-  <!-- Item 4: Kibe -->
-  <div class="shortcut" tabindex="0" data-target="bebidas">
-    <div class="img-container">
-      <img src="https://blog-parceiros.ifood.com.br/wp-content/uploads/2024/10/quibe.jpg" alt="Kibe">
-      <span class="badge-tag">Salgado</span>
-      <span class="badge-num">4</span>
-    </div>
-    <div class="shortcut-body">
-      <h3>Kibe Assado</h3>
-      <p>Preparo simples na travessa, sem necessidade de fritura individual.</p>
-      <div class="shortcut-meta">
-        <span>⏱️ 40 min</span>
-        <span>👥 6 porções</span>
-        <span class="badge-diff">Fácil</span>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-  <script>
-    const items = document.querySelectorAll('.shortcut');
-    let currentIndex = 0;
-
-    // Foca o primeiro item ao carregar a página
-    items[currentIndex].focus();
-
-    // Gerencia a navegação pelas setas e ativação pelo Enter
-    document.addEventListener('keydown', (e) => {
-      if (['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown'].includes(e.key)) {
-        e.preventDefault();
-
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-          currentIndex = (currentIndex + 1) % items.length;
-        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-          currentIndex = (currentIndex - 1 + items.length) % items.length;
-        }
-
-        items[currentIndex].focus();
-      }
-
-      if (e.key === 'Enter') {
-        const activeElement = document.activeElement;
-        if (activeElement.classList.contains('shortcut')) {
-          activateShortcut(activeElement.getAttribute('data-target'));
-        }
-      }
-    });
-
-    // Permite clicar com o mouse também
-    items.forEach((item, index) => {
-      item.addEventListener('click', () => {
-        currentIndex = index;
-        item.focus();
-        activateShortcut(item.getAttribute('data-target'));
-      });
-    });
-
-    // Ação do atalho
-    function activateShortcut(target) {
-      const title = document.getElementById('title');
-      const description = document.getElementById('description');
-
-      switch (target) {
-        case 'home':
-          title.textContent = 'Página Inicial';
-          description.textContent = 'Você abriu o atalho para a Página Inicial.';
-          break;
-        case 'profile':
-          title.textContent = 'Meu Perfil';
-          description.textContent = 'Você abriu o atalho para as configurações do Perfil.';
-          break;
-        case 'settings':
-          title.textContent = 'Configurações';
-          description.textContent = 'Você abriu o atalho para as Configurações do sistema.';
-          break;
-        case 'help':
-          title.textContent = 'Central de Ajuda';
-          description.textContent = 'Você abriu o atalho para a Central de Ajuda.';
-          break;
-      }
-    }
-    </script>
-
-<!-- VISÃO 1: LISTA DE RECEITAS -->
-<div id="visao-grid">
-  <!-- Mantenha seu <div class="container" id="grid"> aqui dentro -->
-</div>
-
-<!-- VISÃO 2: DETALHES DA RECEITA (Oculto por padrão) -->
-<main id="visao-receita" class="receita-container" hidden>
-  
-  <button id="btn-voltar" class="btn-voltar">
-    ← Voltar às receitas <kbd>ESC</kbd>
-  </button>
-
-  <span class="badge-tag" id="rec-categoria">Prato Principal</span>
-  <h1 id="rec-titulo">Lasanha à Bolonhesa</h1>
-  <p class="rec-descricao">Macia, rápida e sem cortes difíceis. Perfeita para servir com facilidade.</p>
-
-  <div class="rec-meta">
-    <span>⏱️ 45 min</span>
-    <span>👥 4 porções</span>
-    <span class="badge-diff">Fácil</span>
-  </div>
-
-  <div class="rec-imagem">
-    <img id="rec-img" src="https://www.gastronomia.com.br/wp-content/uploads/2023/12/comida-com-l-lasanha-lagosta-linguica-e-muito-mais.jpg" alt="Lasanha">
-  </div>
-
-  <!-- Bloco de Ingredientes -->
-  <section class="card-secao">
-    <h2>Ingredientes</h2>
-    <ul class="lista-ingredientes">
-      <li><span>1</span> 500g de massa para lasanha pré-cozida</li>
-      <li><span>2</span> 500g de carne moída bem cozida</li>
-      <li><span>3</span> 2 sachês de molho de tomate pronto</li>
-      <li><span>4</span> 300g de queijo mussarela fatiado</li>
-    </ul>
-  </section>
-
-  <!-- Bloco do Modo de Preparo -->
-  <section class="card-secao">
-    <h2>Modo de Preparo</h2>
-    <div class="passo-box">
-      <div class="passo-numero">1</div>
-      <div class="passo-texto">
-        <p>Em uma travessa funda, monte camadas alternando o molho, a massa e o queijo.</p>
+      <!-- Modo de Preparo com Passos e Navegação -->
+      <section class="card-secao">
+        <h2>Modo de Preparo</h2>
         
-        <div class="dica-acessibilidade">
-          💡 <strong>Dica de acessibilidade:</strong> Apoie a travessa sobre um pano úmido ou tapete antiderrapante para não deslizar na bancada.
+        <div class="progresso-container">
+          <div id="passo-progresso" class="barra-progresso"></div>
         </div>
-      </div>
-    </div>
-  </section>
 
-</main>
+        <div class="passo-box">
+          <div class="passo-numero" id="passo-numero">1</div>
+          <div class="passo-conteudo">
+            <p id="passo-texto">Em uma travessa funda, monte camadas alternando o molho, a massa e o queijo.</p>
+            <div class="dica-acessibilidade" id="passo-dica">
+              💡 <strong>Dica de acessibilidade:</strong> Apoie a travessa sobre um pano úmido para não deslizar.
+            </div>
+          </div>
+        </div>
 
-<!-- 1. Envolva seus cards nesta div com id="visao-grid" -->
-<div id="visao-grid">
-  <div class="container" id="grid">
-    <!-- Seus cards .shortcut aqui -->
-  </div>
-</div>
+        <div class="passo-controles">
+          <button id="btn-passo-anterior" class="btn-passo" disabled>← Anterior <kbd>P</kbd></button>
+          <button id="btn-passo-proximo" class="btn-passo btn-destaque">Próximo → <kbd>N</kbd></button>
+        </div>
+      </section>
+    </main>
 
-<!-- 2. Adicione este bloco com id="visao-receita" (com o atributo hidden) -->
-<main id="visao-receita" hidden>
-  <button id="btn-voltar">← Voltar às receitas</button>
-  <!-- Conteúdo da receita aqui -->
-</main>
+  </main>
 
-<!-- Bloco do Modo de Preparo -->
-<section class="card-secao">
-  <h2>Modo de Preparo</h2>
-  
-  <!-- Barra de Progresso -->
-  <div class="progresso-container">
-    <div id="passo-progresso" class="barra-progresso"></div>
-  </div>
-
-  <div class="passo-box">
-    <div class="passo-numero" id="passo-numero">1</div>
-    <div class="passo-conteudo">
-      <p id="passo-texto">Em uma travessa funda, monte camadas alternando o molho, a massa e o queijo.</p>
-      <div class="dica-acessibilidade" id="passo-dica">
-        💡 <strong>Dica de acessibilidade:</strong> Apoie a travessa sobre um pano úmido para não deslizar.
-      </div>
-    </div>
-  </div>
-
-  <!-- Botões de Navegação -->
-  <div class="passo-controles">
-    <button id="btn-passo-anterior" class="btn-passo" disabled>← Anterior <kbd>P</kbd></button>
-    <button id="btn-passo-proximo" class="btn-passo btn-destaque">Próximo → <kbd>N</kbd></button>
-  </div>
-</section>
-
+  <script src="script.js"></script>
 </body>
 </html>
