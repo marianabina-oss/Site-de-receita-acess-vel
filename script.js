@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-document.addEventListener('DOMContentLoaded', () => {
   // --- MODAL DE ATALHOS ---
   const modal = document.getElementById('modal-atalhos');
   const btnAtalhos = document.getElementById('btn-atalhos');
@@ -50,25 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Trava Seta para Baixo exclusivamente para rolagem
+    // Rolagem suave com a seta para Baixo
     if (event.key === 'ArrowDown') {
       event.preventDefault();
-      event.stopPropagation();
-      if (document.activeElement && document.activeElement.tagName !== 'BODY') {
-        document.activeElement.blur();
-      }
-      window.scrollBy({ top: 350, behavior: 'smooth' });
+      window.scrollBy({ top: 300, behavior: 'smooth' });
       return;
     }
 
-    // Trava Seta para Cima exclusivamente para rolagem
+    // Rolagem suave com a seta para Cima
     if (event.key === 'ArrowUp') {
       event.preventDefault();
-      event.stopPropagation();
-      if (document.activeElement && document.activeElement.tagName !== 'BODY') {
-        document.activeElement.blur();
-      }
-      window.scrollBy({ top: -350, behavior: 'smooth' });
+      window.scrollBy({ top: -300, behavior: 'smooth' });
       return;
     }
 
@@ -85,9 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.key === 'Escape' && visaoReceita && !visaoReceita.hasAttribute('hidden')) {
       fecharReceita();
     }
-  }, true);
+  });
 
-  // Clique em qualquer card
+  // Clique com o mouse em qualquer card
   document.addEventListener('click', (event) => {
     if (event.target.closest('.shortcut')) {
       abrirReceita();
