@@ -21,7 +21,7 @@ document.addEventListener('keydown', (event) => {
   const tagAtiva = document.activeElement.tagName;
   if (tagAtiva === 'INPUT' || tagAtiva === 'TEXTAREA') return;
 
-  if (event.key === '?') {
+  if (event.key === '?' || event.key === '/') {
     event.preventDefault();
     alternarPainel();
   }

@@ -177,46 +177,120 @@ kbd {
       gap: 20px;
     }
 
- .shortcut {
+/* Organização da grade */
+.container#grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
+  gap: 24px;
+  justify-content: center;
+  padding: 20px 10px;
+}
+
+/* Card principal mantendo a classe .shortcut para o JS */
+.shortcut {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 120px;
-  height: 125px; /* Aumentado levemente para o texto caber sem aperto */
+  width: 100%;
   background-color: #ffffff;
-  border: 2px solid #cccccc;
-  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
   cursor: pointer;
   outline: none;
   transition: all 0.2s ease;
-  overflow: hidden; /* CORTA a imagem no raio exato do card */
+  overflow: hidden;
+  text-align: left;
+}
+
+/* Foco visual para navegação com as setas e hover */
+.shortcut:focus,
+.shortcut:hover {
+  border-color: #1e5138;
+  box-shadow: 0 8px 18px rgba(30, 81, 56, 0.18);
+  transform: translateY(-4px);
+}
+
+/* Container da Imagem + Selos */
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
 }
 
 .shortcut img {
-  width: 100%; /* Ocupa de borda a borda */
-  height: 85px; /* Reservado para a foto */
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* Estilo de foco visual ao navegar com as setas */
-.shortcut:focus {
-  border-color: #0066cc;
-  box-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
-  transform: scale(1.05);
-}
-
-.shortcut svg {
-  width: 48px;
-  height: 48px;
-  fill: #333333;
-}
-
-.shortcut span {
-  margin: auto 0; /* Centraliza o texto no espaço que sobrou embaixo */
-  font-size: 14px;
+.badge-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #1e5138;
+  font-size: 0.75rem;
   font-weight: bold;
-  color: #333333;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.badge-num {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #1e5138;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Textos do Card */
+.shortcut-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.shortcut-body h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.shortcut-body p {
+  margin: 0 0 16px 0;
+  font-size: 0.85rem;
+  color: #666666;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+/* Rodapé do Card */
+.shortcut-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #444444;
+  font-weight: 600;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+}
+
+.badge-diff {
+  background-color: #1e5138;
+  color: #ffffff;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
 }
 
     #content-area {
